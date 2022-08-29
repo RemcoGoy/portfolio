@@ -4,10 +4,7 @@ import { useRouter } from 'next/router';
 import Navbar from './Navbar';
 // import Footer from './Footer';
 
-const ContainerBlock: FunctionComponent<any> = ({
-  children,
-  ...customMeta
-}) => {
+const ContainerBlock: FunctionComponent<any> = ({ children, ...customMeta }) => {
   const router = useRouter();
 
   const meta = {
@@ -24,14 +21,8 @@ const ContainerBlock: FunctionComponent<any> = ({
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
-        <meta
-          property="og:url"
-          content={`https://www.remcogoyvaerts.com${router.asPath}`}
-        />
-        <link
-          rel="canonical"
-          href={`https://www.remcogoyvaerts.com${router.asPath}`}
-        />
+        <meta property="og:url" content={`https://www.remcogoyvaerts.com${router.asPath}`} />
+        <link rel="canonical" href={`https://www.remcogoyvaerts.com${router.asPath}`} />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Manu Arora" />
         <meta property="og:description" content={meta.description} />
@@ -42,9 +33,7 @@ const ContainerBlock: FunctionComponent<any> = ({
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
-        {meta.date && (
-          <meta property="article:published_time" content={meta.date} />
-        )}
+        {meta.date && <meta property="article:published_time" content={meta.date} />}
       </Head>
       <main className="dark:bg-gray-800 w-full">
         <Navbar />

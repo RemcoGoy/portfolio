@@ -15,9 +15,7 @@ const Home: NextPage = () => {
       {/* <Hero />
       <FavouriteProjects />
       <LatestCode /> */}
-      <h1 className="relative w-full flex-none mb-2 text-2xl font-semibold text-white">
-        Hello world!
-      </h1>
+      <h1 className="relative w-full flex-none mb-2 text-2xl font-semibold text-white">Hello world!</h1>
     </ContainerBlock>
   );
 };
