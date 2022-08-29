@@ -9,7 +9,7 @@ import { NextPage } from 'next/types';
 const Home: NextPage = () => {
   return (
     <ContainerBlock
-      title="Manu Arora - Developer, Writer, Creator"
+      title="Remco Goyvaerts - Developer, Engineer, Scientist"
       description="Building a template with Next.js and Tailwindcss - for FreeCodeCamp users."
     >
       {/* <Hero />
