@@ -7,6 +7,7 @@ import RainbowHighlight from './RainbowHighlight';
 const Hero: FunctionComponent<any> = () => {
   const colors = ['#F59E0B', '#84CC16', '#10B981', '#3B82F6'];
   const heroTitles: ReactNode[] = [];
+  const imageSize = 300;
 
   userData.heroTitles.forEach((title, index) => {
     heroTitles.push(
@@ -25,12 +26,12 @@ const Hero: FunctionComponent<any> = () => {
 
       {/* Image container */}
       <div className="hidden lg:block relative w-full md:w-1/2 mx-auto -mr-40 mt-20">
-        <div className="w-3/4">
+        <div className="w-3/4 px-12">
           <Image
             src={userData.avatarUrl}
             alt="avatar"
-            height="500"
-            width="500"
+            height={imageSize}
+            width={imageSize}
             layout="responsive"
             className="shadow"
           />
