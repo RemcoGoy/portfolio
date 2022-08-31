@@ -7,7 +7,7 @@ const userData = {
     linkedin: '',
   },
   avatarUrl: '/avatar.jpg',
-  heroTitles: ['Developer', 'AI Engineer', 'Data Scientist'],
+  heroTitles: ['Developer', 'Machine', 'Learning', 'Engineer'],
 };
 
 export default userData;
