@@ -6,6 +6,7 @@ const userData = {
     twitter: '',
     linkedin: '',
   },
+  avatarUrl: '/avatar.jpg',
   heroTitles: ['Developer', 'AI Engineer', 'Data Scientist'],
 };
 
