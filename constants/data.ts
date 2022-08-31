@@ -6,7 +6,7 @@ const userData = {
     twitter: '',
     linkedin: '',
   },
-  heroTitles: ['Developer', 'AI Engineer'],
+  heroTitles: ['Developer', 'AI Engineer', 'Data Scientist'],
 };
 
 export default userData;
