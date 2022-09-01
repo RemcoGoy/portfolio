@@ -6,6 +6,8 @@ const userData = {
     twitter: '',
     linkedin: '',
   },
+  avatarUrl: '/avatar.jpg',
+  heroTitles: ['Developer', 'Machine', 'Learning', 'Engineer'],
 };
 
 export default userData;

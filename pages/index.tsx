@@ -5,6 +5,7 @@ import ContainerBlock from '../components/ContainerBlock';
 // import LatestCode from '../components/LatestCode';
 // import Hero from '../components/Hero';
 import { NextPage } from 'next/types';
+import Hero from '@components/Hero';
 
 const Home: NextPage = () => {
   return (
@@ -12,10 +13,9 @@ const Home: NextPage = () => {
       title="Remco Goyvaerts - Developer, Engineer, Scientist"
       description="Building a template with Next.js and Tailwindcss - for FreeCodeCamp users."
     >
-      {/* <Hero />
-      <FavouriteProjects />
+      {/* <FavouriteProjects />
       <LatestCode /> */}
-      <h1 className="relative w-full flex-none mb-2 text-2xl font-semibold text-white">Hello world!</h1>
+      <Hero />
     </ContainerBlock>
   );
 };
