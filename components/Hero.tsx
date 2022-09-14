@@ -11,7 +11,7 @@ const Hero: FunctionComponent<any> = () => {
 
   userData.heroTitles.forEach((title, index) => {
     heroTitles.push(
-      <RainbowHighlight color={colors[index]}>
+      <RainbowHighlight color={colors[index]} key={title}>
         <h1 className="text-4xl md:text-8xl font-bold text-gray-700 dark:text-gray-200 my-2">{title}.</h1>
       </RainbowHighlight>
     );
