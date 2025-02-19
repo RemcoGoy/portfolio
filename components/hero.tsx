@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin } from "lucide-react";
 import Highlighter from "react-highlight-words";
@@ -6,16 +5,11 @@ import Highlighter from "react-highlight-words";
 export default function Hero() {
   return (
     <div className="relative overflow-hidden bg-white dark:bg-black text-black dark:text-white">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 z-0 opacity-5">
-        <div className="absolute inset-0 bg-[radial-gradient(#000000_1px,transparent_1px)] [background-size:20px_20px]"></div>
-      </div>
-
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-14 py-24 sm:py-32 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
-              John Doe
+              Remco Goyvaerts
             </h1>
             <p className="mt-4 text-xl sm:text-2xl text-gray-600 dark:text-gray-400">
               <Highlighter
@@ -62,17 +56,6 @@ export default function Hero() {
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </Button>
-            </div>
-          </div>
-          <div className="relative">
-            <div className="aspect-square overflow-hidden rounded-full border-4 border-black dark:border-white p-1">
-              <Image
-                src="/placeholder.svg?height=400&width=400"
-                alt="John Doe"
-                width={400}
-                height={400}
-                className="rounded-full object-cover grayscale"
-              />
             </div>
           </div>
         </div>
