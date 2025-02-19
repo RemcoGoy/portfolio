@@ -11,11 +11,13 @@ import { Button } from "@/components/ui/button";
 import { nanoid } from "nanoid";
 import Link from "next/link";
 
+import { firacode_bold } from "@/app/fonts";
+
 const Navbar = () => {
   return (
     <Card className="grid grid-cols-3 bg-card py-4 px-4 border-0">
-      <div className="flex items-center">
-        <BoxIcon className="text-primary cursor-pointer" />
+      <div className={`flex items-center font-bold ${firacode_bold.className}`}>
+        @RemcoGoy
       </div>
 
       <div className="flex items-center justify-center">
@@ -29,14 +31,11 @@ const Navbar = () => {
           <li>
             <a href="#pricing">About</a>
           </li>
-          <li>
-            <a href="#faqs">Contact</a>
-          </li>
         </ul>
       </div>
 
       <div className="flex items-center justify-end">
-        <Button className="hidden md:block ml-2 mr-2">Get Started</Button>
+        <Button className="hidden md:block ml-2 mr-2">Contact me</Button>
 
         <div className="flex md:hidden mr-2 items-center gap-2">
           <DropdownMenu>
@@ -57,10 +56,7 @@ const Navbar = () => {
                 <a href="#pricing">About</a>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <a href="#faqs">Contact</a>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Button className="w-full text-sm">Get Started</Button>
+                <Button className="w-full text-sm">Contact me</Button>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
