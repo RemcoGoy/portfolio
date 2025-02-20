@@ -5,9 +5,9 @@ import Highlighter from "react-highlight-words";
 export default function Hero() {
   return (
     <div className="relative overflow-hidden bg-white dark:bg-black text-black dark:text-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-14 py-24 sm:py-32 relative z-10">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-14 py-24 sm:py-32 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
+          <div className="p-4">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
               Remco Goyvaerts
             </h1>
@@ -56,6 +56,15 @@ export default function Hero() {
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </Button>
+            </div>
+          </div>
+          <div className="p-4 min-h-[400px]">
+            <div className="flex items-center justify-center h-full">
+              <img
+                src="./me.png"
+                alt="Me"
+                className="rounded-full p-2 filter brightness-110 bg-dark/10 dark:bg-white/10"
+              />
             </div>
           </div>
         </div>
