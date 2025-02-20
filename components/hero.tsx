@@ -63,7 +63,7 @@ export default function Hero() {
               <img
                 src="./me.png"
                 alt="Me"
-                className="rounded-full p-2 filter brightness-110 bg-dark/10 dark:bg-white/10"
+                className="rounded-full p-2 filter brightness-110 bg-black/10 dark:bg-white/10"
               />
             </div>
           </div>
