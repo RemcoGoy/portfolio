@@ -5,8 +5,8 @@ import { ArrowRight, Github, Linkedin } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
-const TITLES = ["Innovation", "3D", "Machine Learning"];
-const TITLE_DURATION = 7500;
+const TITLES = ["Innovation", "3D", "Machine Learning", "Software", "Data"];
+const TITLE_DURATION = 5000;
 
 export default function Hero() {
   const [currentTitle, setCurrentTitle] = useState(TITLES[0]);
@@ -16,7 +16,7 @@ export default function Hero() {
   const resetAnimationInterval = setInterval(() => {
     setY(0);
     setScale(1);
-  }, 75);
+  }, 100);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,8 +24,8 @@ export default function Hero() {
         TITLES[(TITLES.indexOf(currentTitle) + 1) % TITLES.length]
       );
 
-      setY(-20);
-      setScale(1.25);
+      setY(-15);
+      setScale(1.2);
     }, TITLE_DURATION);
 
     return () => {
