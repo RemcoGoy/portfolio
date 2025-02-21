@@ -18,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geist.className} antialiased`}>
+      <body
+        className={`${geist.className} antialiased bg-zinc-50 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50`}
+      >
         {/* <body className={`${geist.className} antialiased debug-screens`}> */}
         <ThemeProvider>
           <Navbar />
