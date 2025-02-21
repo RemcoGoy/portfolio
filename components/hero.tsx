@@ -46,7 +46,7 @@ export default function Hero() {
               <motion.div
                 animate={{ y, scale }}
                 transition={{ type: "spring" }}
-                className="inline-block drop-shadow-lg border border-gray-900 bg-gray-900 text-white px-2 py-1 rounded-md dark:border-gray-100 dark:bg-gray-100 dark:text-black"
+                className="inline-block drop-shadow-xl border border-gray-900 bg-gray-900 text-white px-2 py-1 rounded-md dark:border-gray-100 dark:bg-gray-100 dark:text-black"
               >
                 {currentTitle}
               </motion.div>{" "}

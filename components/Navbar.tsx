@@ -15,7 +15,7 @@ import { firacode_bold } from "@/app/fonts";
 
 const Navbar = () => {
   return (
-    <Card className="drop-shadow-md dark:drop-shadow-xl grid grid-cols-3 py-4 px-4 border-0 bg-zinc-50 dark:bg-zinc-900">
+    <Card className="drop-shadow-lg grid grid-cols-3 py-4 px-4 border-0 bg-zinc-50 dark:bg-zinc-900">
       <div className={`flex items-center font-bold ${firacode_bold.className}`}>
         @RemcoGoy
       </div>
