@@ -58,7 +58,7 @@ export default function Hero() {
               </Button>
             </div>
           </div>
-          <div className="p-4 min-h-[400px]">
+          <div className="p-4 min-h-[400px] hidden lg:block">
             <div className="flex items-center justify-center h-full">
               <img
                 src="./me.png"

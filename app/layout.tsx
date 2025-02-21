@@ -19,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geist.className} antialiased`}>
+        {/* <body className={`${geist.className} antialiased debug-screens`}> */}
         <ThemeProvider>
           <Navbar />
           {children}
