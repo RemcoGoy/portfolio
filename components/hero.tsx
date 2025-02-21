@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 const TITLES = ["Innovation", "3D", "Machine Learning", "Software", "Data"];
 const TITLE_DURATION = 5000;
@@ -12,11 +13,6 @@ export default function Hero() {
   const [currentTitle, setCurrentTitle] = useState(TITLES[0]);
   const [y, setY] = useState(0);
   const [scale, setScale] = useState(1);
-
-  const resetAnimationInterval = setInterval(() => {
-    setY(0);
-    setScale(1);
-  }, 100);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -27,6 +23,11 @@ export default function Hero() {
       setY(-15);
       setScale(1.2);
     }, TITLE_DURATION);
+
+    const resetAnimationInterval = setInterval(() => {
+      setY(0);
+      setScale(1);
+    }, 100);
 
     return () => {
       clearInterval(interval);
@@ -93,12 +94,12 @@ export default function Hero() {
           </div>
           <div className="p-4 min-h-[400px] hidden lg:block">
             <div className="flex items-center justify-center h-full">
-              <img
-                src="./me.png"
+              <Image
+                src="/me.png"
                 alt="Me"
                 className="rounded-full p-2 filter brightness-110 bg-zinc-900 dark:bg-zinc-50"
-                width="500"
-                height="500"
+                width={500}
+                height={500}
               />
             </div>
           </div>
