@@ -15,6 +15,11 @@ export default function Hero() {
   const [y, setY] = useState(0);
   const [scale, setScale] = useState(1);
 
+  const resetAnimationInterval = setInterval(() => {
+    setY(0);
+    setScale(1);
+  }, 100);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTitle(
@@ -25,16 +30,11 @@ export default function Hero() {
       setScale(1.2);
     }, TITLE_DURATION);
 
-    const resetAnimationInterval = setInterval(() => {
-      setY(0);
-      setScale(1);
-    }, 100);
-
     return () => {
       clearInterval(interval);
       clearInterval(resetAnimationInterval);
     };
-  }, [currentTitle]);
+  }, [currentTitle, resetAnimationInterval]);
 
   return (
     <div className="relative overflow-hidden">
