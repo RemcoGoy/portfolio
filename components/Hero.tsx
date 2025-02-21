@@ -5,6 +5,7 @@ import { ArrowRight, Github, Linkedin } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Me from "@/public/me.png";
 
 const TITLES = ["Innovation", "3D", "Machine Learning", "Software", "Data"];
 const TITLE_DURATION = 5000;
@@ -95,7 +96,7 @@ export default function Hero() {
           <div className="p-4 min-h-[400px] hidden lg:block">
             <div className="flex items-center justify-center h-full">
               <Image
-                src="/me.png"
+                src={Me}
                 alt="Me"
                 className="rounded-full p-2 filter brightness-110 bg-zinc-900 dark:bg-zinc-50"
                 width={500}
