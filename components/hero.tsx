@@ -1,7 +1,39 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin } from "lucide-react";
+import { useEffect, useState } from "react";
+import { motion } from "motion/react";
+
+const TITLES = ["Innovation", "3D", "Machine Learning"];
+const TITLE_DURATION = 7500;
 
 export default function Hero() {
+  const [currentTitle, setCurrentTitle] = useState(TITLES[0]);
+  const [y, setY] = useState(0);
+  const [scale, setScale] = useState(1);
+
+  const resetAnimationInterval = setInterval(() => {
+    setY(0);
+    setScale(1);
+  }, 75);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTitle(
+        TITLES[(TITLES.indexOf(currentTitle) + 1) % TITLES.length]
+      );
+
+      setY(-20);
+      setScale(1.25);
+    }, TITLE_DURATION);
+
+    return () => {
+      clearInterval(interval);
+      clearInterval(resetAnimationInterval);
+    };
+  }, [currentTitle]);
+
   return (
     <div className="relative overflow-hidden">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-14 py-24 sm:py-32 relative z-10">
@@ -11,9 +43,13 @@ export default function Hero() {
               Remco Goyvaerts
             </h1>
             <div className="my-8 text-3xl text-gray-600 dark:text-gray-400">
-              <div className="inline drop-shadow-lg border border-gray-900 bg-gray-900 text-white px-2 py-1 rounded-md dark:border-gray-100 dark:bg-gray-100 dark:text-black">
-                Innovation
-              </div>{" "}
+              <motion.div
+                animate={{ y, scale }}
+                transition={{ type: "spring" }}
+                className="inline-block drop-shadow-lg border border-gray-900 bg-gray-900 text-white px-2 py-1 rounded-md dark:border-gray-100 dark:bg-gray-100 dark:text-black"
+              >
+                {currentTitle}
+              </motion.div>{" "}
               Engineer
             </div>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
