@@ -88,3 +88,7 @@
   width: calc(100% + 1.3px);
   height: 160px;
 }
+
+html {
+  scroll-behavior: smooth;
+}
