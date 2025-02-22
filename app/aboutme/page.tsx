@@ -1,6 +1,7 @@
 import AboutMe from "@/components/about/AboutHeader";
 import AboutBasics from "@/components/about/AboutBasics";
 import AboutDivider from "@/components/about/AboutDivider";
+import AboutSocials from "@/components/about/AboutSocials";
 
 export default function AboutMePage() {
   return (
@@ -9,6 +10,7 @@ export default function AboutMePage() {
       <AboutDivider />
       <AboutBasics />
       <AboutDivider />
+      <AboutSocials />
     </div>
   );
 }
