@@ -22,24 +22,22 @@ const AboutMe = () => {
 
   return (
     <>
-      <div className="col-span-6 row-span-3 lg:col-span-2 p-4 border-r border-zinc-200 dark:border-zinc-800">
+      <div className="col-span-6 row-span-3 lg:col-span-2 p-1 border-r border-zinc-200 dark:border-zinc-800">
         <Image
           src={Me}
           alt="Me"
-          className="rounded-full p-2 filter brightness-110 bg-zinc-900 dark:bg-zinc-50 ml-auto"
-          width={300}
-          height={200}
+          className="rounded-full p-1 filter brightness-110 bg-zinc-900 dark:bg-zinc-50 ml-auto"
         />
       </div>
       <div className="col-span-6 lg:col-span-4 p-24 border-b border-zinc-200 dark:border-zinc-800"></div>
       <div className="col-span-6 lg:col-span-4 px-2 flex items-end border-b border-zinc-200 dark:border-zinc-800">
-        <h2 className="text-3xl font-bold tracking-tight">
+        <h2 className="text-3xl mb-1 font-bold tracking-tight">
           <span className={`${roboto_condensed.className}`}>@RemcoGoy</span>
         </h2>
       </div>
       <div className="col-span-6 lg:col-span-4 px-2 border-zinc-200 dark:border-zinc-800">
         <h4
-          className={`text-xl text-zinc-900 dark:text-zinc-200 font-medium tracking-tight ${firacode.className}`}
+          className={`text-xl mt-1 text-zinc-900 dark:text-zinc-200 font-medium tracking-tight ${firacode.className}`}
         >
           <motion.div
             key={currentTitle}
