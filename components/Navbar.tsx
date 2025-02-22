@@ -9,7 +9,7 @@ import { Card } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 
-import { firacode_bold } from "@/app/fonts";
+import { firacode_bold } from "@/lib/fonts";
 
 const Navbar = () => {
   return (

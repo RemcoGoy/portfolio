@@ -6,9 +6,7 @@ import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Me from "@/public/me.png";
-
-const TITLES = ["Innovation", "3D", "Machine Learning", "Software", "Data"];
-const TITLE_DURATION = 5000;
+import { TITLES, TITLE_DURATION } from "@/lib/titles";
 
 export default function Hero() {
   const [currentTitle, setCurrentTitle] = useState(TITLES[0]);

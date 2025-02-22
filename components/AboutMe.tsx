@@ -1,89 +1,61 @@
-'use client';
+"use client";
 
-import { motion } from 'motion/react';
-import { Terminal, Code2, Cpu, Globe } from 'lucide-react';
+import Image from "next/image";
+import Me from "@/public/me.png";
+import { firacode, roboto_condensed } from "@/lib/fonts";
+import { TITLES, TITLE_DURATION } from "@/lib/titles";
+import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 
 const AboutMe = () => {
+  const [currentTitle, setCurrentTitle] = useState(TITLES[0]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTitle(
+        TITLES[(TITLES.indexOf(currentTitle) + 1) % TITLES.length]
+      );
+    }, TITLE_DURATION);
+
+    return () => clearInterval(interval);
+  }, [currentTitle]);
+
   return (
-    <div className="min-h-screen p-8">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-8"
+    <div className="grid grid-cols-6 w-8/12 mx-auto">
+      <div className="col-span-6 row-span-3 lg:col-span-2 p-4">
+        <Image
+          src={Me}
+          alt="Me"
+          className="rounded-full p-2 filter brightness-110 bg-zinc-900 dark:bg-zinc-50 ml-auto"
+          width={300}
+          height={200}
+        />
+      </div>
+      <div className="col-span-6 lg:col-span-4 p-24"></div>
+      <div className="col-span-6 lg:col-span-4 flex items-end">
+        <h2 className="text-3xl font-bold tracking-tight">
+          <span className={`${roboto_condensed.className}`}>@RemcoGoy</span>
+        </h2>
+      </div>
+      <div className="col-span-6 lg:col-span-4">
+        <h4
+          className={`text-xl text-zinc-900 dark:text-zinc-200 font-medium tracking-tight ${firacode.className}`}
         >
-          <h1 className="text-4xl font-bold text-primary">About Me</h1>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className="bg-card p-6 rounded-lg shadow-lg border border-border"
-            >
-              <Terminal className="w-8 h-8 mb-4 text-primary" />
-              <h2 className="text-xl font-semibold mb-3">Software Developer</h2>
-              <p className="text-muted-foreground">
-                Passionate about creating elegant solutions to complex problems. I specialize in modern web technologies and love exploring new frameworks and tools.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 }}
-              className="bg-card p-6 rounded-lg shadow-lg border border-border"
-            >
-              <Code2 className="w-8 h-8 mb-4 text-primary" />
-              <h2 className="text-xl font-semibold mb-3">Tech Stack</h2>
-              <p className="text-muted-foreground">
-                Proficient in React, TypeScript, Next.js, and modern frontend development. Always eager to learn and adapt to new technologies.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.6 }}
-              className="bg-card p-6 rounded-lg shadow-lg border border-border"
-            >
-              <Cpu className="w-8 h-8 mb-4 text-primary" />
-              <h2 className="text-xl font-semibold mb-3">Problem Solver</h2>
-              <p className="text-muted-foreground">
-                I thrive on tackling challenging problems and creating efficient, scalable solutions. Performance and clean code are always top priorities.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8 }}
-              className="bg-card p-6 rounded-lg shadow-lg border border-border"
-            >
-              <Globe className="w-8 h-8 mb-4 text-primary" />
-              <h2 className="text-xl font-semibold mb-3">Always Learning</h2>
-              <p className="text-muted-foreground">
-                The tech world never stands still, and neither do I. Constantly learning and staying updated with the latest industry trends and best practices.
-              </p>
-            </motion.div>
-          </div>
-
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1 }}
-            className="bg-card p-6 rounded-lg shadow-lg border border-border mt-8"
+            key={currentTitle}
+            initial={{ y: 10 }}
+            animate={{ y: 0 }}
+            transition={{
+              type: "spring",
+              bounce: 0.5,
+              duration: 0.5,
+            }}
+            className="inline-block"
           >
-            <h2 className="text-2xl font-semibold mb-4">My Journey</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              What started as a curiosity for coding has evolved into a full-fledged passion for software development. 
-              I&apos;m dedicated to creating intuitive and efficient applications that make a difference. 
-              When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to open-source projects, 
-              or sharing knowledge with the developer community.
-            </p>
-          </motion.div>
-        </motion.div>
+            {currentTitle}
+          </motion.div>{" "}
+          Engineer
+        </h4>
       </div>
     </div>
   );
