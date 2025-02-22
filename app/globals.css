@@ -88,7 +88,3 @@
   width: calc(100% + 1.3px);
   height: 160px;
 }
-
-.wave-divider .shape-fill {
-  fill: oklch(0.274 0.006 286.033);
-}
