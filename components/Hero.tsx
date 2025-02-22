@@ -7,6 +7,7 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import Me from "@/public/me.png";
 import { TITLES, TITLE_DURATION } from "@/lib/titles";
+import { roboto_condensed } from "@/lib/fonts";
 
 export default function Hero() {
   const [currentTitle, setCurrentTitle] = useState(TITLES[0]);
@@ -26,7 +27,9 @@ export default function Hero() {
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-14 py-24 sm:py-32 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="p-4">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
+            <h1
+              className={`text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight ${roboto_condensed.className}`}
+            >
               Remco Goyvaerts
             </h1>
             <div className="my-8 text-3xl text-gray-600 dark:text-gray-400">
@@ -35,11 +38,11 @@ export default function Hero() {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -20, opacity: 0 }}
-                transition={{ 
+                transition={{
                   type: "spring",
                   stiffness: 500,
                   damping: 30,
-                  mass: 1
+                  mass: 1,
                 }}
                 className="inline-block drop-shadow-xl border border-gray-900 bg-gray-900 text-white px-2 py-1 rounded-md dark:border-gray-100 dark:bg-gray-100 dark:text-black"
               >

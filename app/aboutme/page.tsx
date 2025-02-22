@@ -8,6 +8,7 @@ export default function AboutMePage() {
       <AboutMe />
       <AboutDivider />
       <AboutBasics />
+      <AboutDivider />
     </div>
   );
 }
