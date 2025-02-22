@@ -22,7 +22,7 @@ const AboutMe = () => {
 
   return (
     <>
-      <div className="col-span-6 row-span-3 lg:col-span-2 p-4 border-r border-b border-zinc-200 dark:border-zinc-800">
+      <div className="col-span-6 row-span-3 lg:col-span-2 p-4 border-r border-zinc-200 dark:border-zinc-800">
         <Image
           src={Me}
           alt="Me"
@@ -37,7 +37,7 @@ const AboutMe = () => {
           <span className={`${roboto_condensed.className}`}>@RemcoGoy</span>
         </h2>
       </div>
-      <div className="col-span-6 lg:col-span-4 px-2 border-b border-zinc-200 dark:border-zinc-800">
+      <div className="col-span-6 lg:col-span-4 px-2 border-zinc-200 dark:border-zinc-800">
         <h4
           className={`text-xl text-zinc-900 dark:text-zinc-200 font-medium tracking-tight ${firacode.className}`}
         >
