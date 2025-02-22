@@ -21,13 +21,13 @@ const Navbar = () => {
       <div className="flex items-center justify-center">
         <ul className="hidden md:flex items-center gap-12 text-card-foreground">
           <li className="text-primary font-medium">
-            <a href="#home">Home</a>
+            <a href="/">Home</a>
           </li>
           <li>
-            <a href="#features">Projects</a>
+            <a href="/projects">Projects</a>
           </li>
           <li>
-            <a href="#pricing">About</a>
+            <a href="/aboutme">About</a>
           </li>
         </ul>
       </div>
@@ -45,13 +45,13 @@ const Navbar = () => {
 
             <DropdownMenuContent align="end">
               <DropdownMenuItem>
-                <a href="#home">Home</a>
+                <a href="/">Home</a>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <a href="#features">Projects</a>
+                <a href="/projects">Projects</a>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <a href="#pricing">About</a>
+                <a href="/aboutme">About</a>
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Button className="w-full text-sm">Contact me</Button>

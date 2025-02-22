@@ -12,29 +12,16 @@ const TITLE_DURATION = 5000;
 
 export default function Hero() {
   const [currentTitle, setCurrentTitle] = useState(TITLES[0]);
-  const [y, setY] = useState(0);
-  const [scale, setScale] = useState(1);
-
-  const resetAnimationInterval = setInterval(() => {
-    setY(0);
-    setScale(1);
-  }, 100);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTitle(
         TITLES[(TITLES.indexOf(currentTitle) + 1) % TITLES.length]
       );
-
-      setY(-15);
-      setScale(1.2);
     }, TITLE_DURATION);
 
-    return () => {
-      clearInterval(interval);
-      clearInterval(resetAnimationInterval);
-    };
-  }, [currentTitle, resetAnimationInterval]);
+    return () => clearInterval(interval);
+  }, [currentTitle]);
 
   return (
     <div className="relative overflow-hidden">
@@ -46,8 +33,16 @@ export default function Hero() {
             </h1>
             <div className="my-8 text-3xl text-gray-600 dark:text-gray-400">
               <motion.div
-                animate={{ y, scale }}
-                transition={{ type: "spring" }}
+                key={currentTitle}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -20, opacity: 0 }}
+                transition={{ 
+                  type: "spring",
+                  stiffness: 500,
+                  damping: 30,
+                  mass: 1
+                }}
                 className="inline-block drop-shadow-xl border border-gray-900 bg-gray-900 text-white px-2 py-1 rounded-md dark:border-gray-100 dark:bg-gray-100 dark:text-black"
               >
                 {currentTitle}

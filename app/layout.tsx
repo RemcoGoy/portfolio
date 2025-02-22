@@ -23,8 +23,12 @@ export default function RootLayout({
       >
         {/* <body className={`${geist.className} antialiased debug-screens`}> */}
         <ThemeProvider>
-          <Navbar />
-          {children}
+          <div className="fixed top-0 left-0 right-0 z-50">
+            <Navbar />
+          </div>
+          <div className="pt-20">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>
