@@ -10,17 +10,37 @@ import { TITLES, TITLE_DURATION } from "@/lib/titles";
 import { firacode } from "@/lib/fonts";
 
 export default function Hero() {
-  const [currentTitle, setCurrentTitle] = useState(TITLES[0]);
+  const [currentTitle, setCurrentTitle] = useState<string>();
 
   useEffect(() => {
+    setCurrentTitle(TITLES[0]);
+
     const interval = setInterval(() => {
       setCurrentTitle(
-        TITLES[(TITLES.indexOf(currentTitle) + 1) % TITLES.length]
+        (current) => TITLES[(TITLES.indexOf(current!) + 1) % TITLES.length]
       );
     }, TITLE_DURATION);
 
     return () => clearInterval(interval);
-  }, [currentTitle]);
+  }, []);
+
+  const titleContent = currentTitle ? (
+    <motion.div
+      key={currentTitle}
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -20, opacity: 0 }}
+      transition={{
+        type: "spring",
+        stiffness: 500,
+        damping: 30,
+        mass: 1,
+      }}
+      className="inline-block drop-shadow-xl border border-gray-900 bg-gray-900 text-white px-2 py-1 rounded-md dark:border-gray-100 dark:bg-gray-100 dark:text-black"
+    >
+      {currentTitle}
+    </motion.div>
+  ) : null;
 
   return (
     <div className="relative overflow-hidden">
@@ -33,22 +53,7 @@ export default function Hero() {
             <div
               className={`${firacode.className} my-8 text-3xl text-gray-600 dark:text-gray-400`}
             >
-              <motion.div
-                key={currentTitle}
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -20, opacity: 0 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 500,
-                  damping: 30,
-                  mass: 1,
-                }}
-                className="inline-block drop-shadow-xl border border-gray-900 bg-gray-900 text-white px-2 py-1 rounded-md dark:border-gray-100 dark:bg-gray-100 dark:text-black"
-              >
-                {currentTitle}
-              </motion.div>{" "}
-              Engineer
+              {titleContent} Engineer
             </div>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
               Pioneering AI-driven solutions and innovative 3D engineering.
@@ -67,7 +72,7 @@ export default function Hero() {
                 variant="outline"
                 className="text-black dark:text-white border-black dark:border-white hover:bg-gray-100 dark:hover:bg-gray-900"
               >
-                Get in Touch
+                <a href="/#contact">Get in Touch</a>
               </Button>
             </div>
             <div className="mt-8 flex gap-4">

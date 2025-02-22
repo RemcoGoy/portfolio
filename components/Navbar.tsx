@@ -33,7 +33,9 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center justify-end">
-        <Button className="hidden md:block ml-2 mr-2">Contact me</Button>
+        <Button className="hidden md:block ml-2 mr-2" asChild>
+          <a href="/#contact">Contact me</a>
+        </Button>
 
         <div className="flex md:hidden mr-2 items-center gap-2">
           <DropdownMenu>
