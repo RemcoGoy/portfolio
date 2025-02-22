@@ -11,6 +11,7 @@ export default function AboutMePage() {
       <AboutBasics />
       <AboutDivider />
       <AboutSocials />
+      <AboutDivider />
     </div>
   );
 }
