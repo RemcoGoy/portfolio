@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Remco Goyvaerts",
@@ -26,6 +27,7 @@ export default function RootLayout({
           </div>
           <div className="pt-20">{children}</div>
           <Analytics />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
