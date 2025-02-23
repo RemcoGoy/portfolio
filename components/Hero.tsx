@@ -8,6 +8,7 @@ import Image from "next/image";
 import Me from "@/public/me.png";
 import { TITLES, TITLE_DURATION } from "@/lib/titles";
 import { firacode } from "@/lib/fonts";
+import Link from "next/link";
 
 export default function Hero() {
   const [currentTitle, setCurrentTitle] = useState<string>();
@@ -72,7 +73,7 @@ export default function Hero() {
                 variant="outline"
                 className="text-black dark:text-white border-black dark:border-white hover:bg-gray-100 dark:hover:bg-gray-900"
               >
-                <a href="/#contact">Get in Touch</a>
+                <Link href="/#contact">Get in Touch</Link>
               </Button>
             </div>
             <div className="mt-8 flex gap-4">

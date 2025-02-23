@@ -1,15 +1,7 @@
 "use client";
 
 import { firacode } from "@/lib/fonts";
-import {
-  User2,
-  MapPin,
-  Target,
-  Mail,
-  Github,
-  Linkedin,
-  Phone,
-} from "lucide-react";
+import { User2, MapPin, Target, Mail, Phone } from "lucide-react";
 
 const AboutBasics = () => {
   return (
