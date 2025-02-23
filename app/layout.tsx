@@ -3,6 +3,7 @@ import { roboto_condensed } from "@/lib/fonts";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Remco Goyvaerts",
@@ -24,6 +25,7 @@ export default function RootLayout({
             <Navbar />
           </div>
           <div className="pt-20">{children}</div>
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
