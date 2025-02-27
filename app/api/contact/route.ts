@@ -8,15 +8,15 @@ export async function POST(request: Request) {
   const { name, email, message } = body;
 
   try {
-    const { data, error } = await resend.emails.send({
+    const results = await resend.emails.send({
       from: "portfolio@fireflysolutions.be",
       to: "remco.goy@hotmail.com",
       subject: `New Contact Form Submission from ${name}`,
       react: ContactTemplate({ name, email, message }),
     });
 
-    if (error) {
-      return Response.json({ error }, { status: 500 });
+    if (results.error) {
+      return Response.json({ error: results.error }, { status: 500 });
     }
 
     return new Response(
