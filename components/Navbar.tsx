@@ -8,8 +8,9 @@ import { Menu } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-import { firacode_bold } from "@/app/fonts";
+import { firacode_bold } from "@/lib/fonts";
 
 const Navbar = () => {
   return (
@@ -21,19 +22,21 @@ const Navbar = () => {
       <div className="flex items-center justify-center">
         <ul className="hidden md:flex items-center gap-12 text-card-foreground">
           <li className="text-primary font-medium">
-            <a href="#home">Home</a>
+            <Link href="/">Home</Link>
           </li>
           <li>
-            <a href="#features">Projects</a>
+            <Link href="/projects">Projects</Link>
           </li>
           <li>
-            <a href="#pricing">About</a>
+            <Link href="/aboutme">About</Link>
           </li>
         </ul>
       </div>
 
       <div className="flex items-center justify-end">
-        <Button className="hidden md:block ml-2 mr-2">Contact me</Button>
+        <Button className="hidden md:block ml-2 mr-2" asChild>
+          <Link href="/#contact">Contact me</Link>
+        </Button>
 
         <div className="flex md:hidden mr-2 items-center gap-2">
           <DropdownMenu>
@@ -45,16 +48,16 @@ const Navbar = () => {
 
             <DropdownMenuContent align="end">
               <DropdownMenuItem>
-                <a href="#home">Home</a>
+                <Link href="/">Home</Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <a href="#features">Projects</a>
+                <Link href="/projects">Projects</Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <a href="#pricing">About</a>
+                <Link href="/aboutme">About</Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Button className="w-full text-sm">Contact me</Button>
+                <Link href="/#contact">Contact me</Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

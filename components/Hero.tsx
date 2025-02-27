@@ -6,9 +6,8 @@ import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import Me from "@/public/me.png";
-
-const TITLES = ["Innovation", "3D", "Machine Learning", "Software", "Data"];
-const TITLE_DURATION = 5000;
+import { TITLES, TITLE_DURATION } from "@/lib/titles";
+import Link from "next/link";
 
 export default function Hero() {
   const [currentTitle, setCurrentTitle] = useState(TITLES[0]);
@@ -80,7 +79,7 @@ export default function Hero() {
                 variant="outline"
                 className="text-black dark:text-white border-black dark:border-white hover:bg-gray-100 dark:hover:bg-gray-900"
               >
-                Get in Touch
+                <Link href="/#contact">Get in Touch</Link>
               </Button>
             </div>
             <div className="mt-8 flex gap-4">
