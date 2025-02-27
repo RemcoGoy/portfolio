@@ -11,7 +11,7 @@ const AboutBasics = () => {
           <User2 className="w-6 h-6 mt-1 text-zinc-700 dark:text-zinc-300" />
           <div>
             <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
-              Innovation Engineer @{" "}
+              Innovation Engineer <br className="block lg:hidden" />@{" "}
               <a
                 href="https://fireflysolutions.be"
                 target="_blank"
@@ -56,7 +56,8 @@ const AboutBasics = () => {
           <Target className="w-6 h-6 text-zinc-700 dark:text-zinc-300" />
           <div>
             <p className="text-zinc-700 dark:text-zinc-300">
-              AI-Driven Solutions & 3D Engineering
+              AI-Driven Solutions <br className="block lg:hidden" />& 3D
+              Engineering
             </p>
           </div>
         </div>
