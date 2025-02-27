@@ -58,14 +58,14 @@ const Contact = () => {
   };
 
   return (
-    <div className="pt-16 px-24 pb-16 bg-zinc-200 dark:bg-zinc-800">
+    <div className="p-6 lg:pt-16 lg:px-24 lg:pb-16 bg-zinc-200 dark:bg-zinc-800">
       {isClient && (
         <div
           className="grid grid-cols-1 md:grid-cols-2 gap-8 relative"
           id="contact"
         >
           {/* Socials Section */}
-          <div className="space-y-4 pr-16">
+          <div className="space-y-4 lg:mr-16">
             <h2 className="text-2xl font-bold text-center bg-gradient-to-r from-zinc-900 to-zinc-600 dark:from-zinc-100 dark:to-zinc-400 bg-clip-text text-transparent">
               Connect With Me
             </h2>
@@ -101,7 +101,7 @@ const Contact = () => {
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[8px] bg-gradient-to-b from-zinc-200 via-zinc-300 to-zinc-200 dark:from-zinc-700 dark:via-zinc-600 dark:to-zinc-700 rounded-full transform -translate-x-1/2" />
 
           {/* Contact Form Section */}
-          <Card className="bg-white/80 dark:bg-zinc-900/80 shadow-sm ml-16">
+          <Card className="bg-white/80 dark:bg-zinc-900/80 shadow-sm lg:ml-16">
             <CardHeader className="pb-2">
               <h2 className="text-2xl font-bold text-center bg-gradient-to-r from-zinc-900 to-zinc-600 dark:from-zinc-100 dark:to-zinc-400 bg-clip-text text-transparent">
                 Get in Touch

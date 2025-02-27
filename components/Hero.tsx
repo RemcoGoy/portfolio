@@ -30,7 +30,7 @@ export default function Hero() {
 
   return (
     <div className="relative overflow-hidden">
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-14 py-24 sm:py-32 relative z-10">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 pb-6 lg:px-14 lg:py-24 sm:py-32 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="p-4">
             <Image
