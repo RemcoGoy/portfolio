@@ -5,7 +5,7 @@ import AboutSocials from "@/components/about/AboutSocials";
 
 export default function AboutMePage() {
   return (
-    <div className="grid grid-cols-6 w-8/12 mx-auto border border-zinc-200 dark:border-zinc-800">
+    <div className="grid grid-cols-6 w-11/12 lg:w-8/12 mx-auto border border-zinc-200 dark:border-zinc-800">
       <AboutMe />
       <AboutDivider />
       <AboutBasics />

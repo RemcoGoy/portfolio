@@ -22,14 +22,14 @@ const AboutMe = () => {
 
   return (
     <>
-      <div className="col-span-6 row-span-3 lg:col-span-2 p-1 border-r border-zinc-200 dark:border-zinc-800">
+      <div className="col-span-6 row-span-3 lg:col-span-2 p-1 border-b lg:border-r border-zinc-200 dark:border-zinc-800">
         <Image
           src={Me}
           alt="Me"
-          className="rounded-full p-1 filter brightness-110 bg-zinc-900 dark:bg-zinc-50 ml-auto"
+          className="rounded-full p-1 filter brightness-110 bg-zinc-900 dark:bg-zinc-50 ml-auto w-36 h-36 lg:w-full lg:h-full"
         />
       </div>
-      <div className="col-span-6 lg:col-span-4 p-24 border-b border-zinc-200 dark:border-zinc-800"></div>
+      <div className="hidden lg:block col-span-6 lg:col-span-4 p-24 border-b border-zinc-200 dark:border-zinc-800"></div>
       <div className="col-span-6 lg:col-span-4 px-2 flex items-end border-b border-zinc-200 dark:border-zinc-800">
         <h2 className="text-3xl mb-1 font-bold tracking-tight">
           <span className={`${roboto_condensed.className}`}>@RemcoGoy</span>
