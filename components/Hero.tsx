@@ -77,7 +77,7 @@ export default function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="text-black dark:text-white border-black dark:border-white hover:bg-gray-100 dark:hover:bg-gray-900"
+                className="text-black dark:text-white border-black dark:border-white hover:bg-zinc-100 dark:hover:bg-zinc-900"
               >
                 <Link href="/#contact">Get in Touch</Link>
               </Button>
@@ -86,7 +86,10 @@ export default function Hero() {
               <Button
                 size="icon"
                 variant="ghost"
-                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-900"
+                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-900"
+                onClick={() => {
+                  window.open("https://github.com/RemcoGoy", "_blank");
+                }}
               >
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
@@ -94,7 +97,13 @@ export default function Hero() {
               <Button
                 size="icon"
                 variant="ghost"
-                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-900"
+                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-900"
+                onClick={() => {
+                  window.open(
+                    "https://www.linkedin.com/in/remco-goyvaerts/",
+                    "_blank"
+                  );
+                }}
               >
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
