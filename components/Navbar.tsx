@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <Card className="drop-shadow-lg grid grid-cols-3 py-4 px-4 border-0 bg-zinc-50 dark:bg-zinc-900">
       <div className={`flex items-center font-bold ${firacode_bold.className}`}>
-        @RemcoGoy
+        <Link href="/">@RemcoGoy</Link>
       </div>
 
       <div className="flex items-center justify-center">
