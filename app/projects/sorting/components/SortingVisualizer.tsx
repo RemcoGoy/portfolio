@@ -52,7 +52,7 @@ export default function SortingVisualizer() {
   useEffect(() => {
     generateArray();
     return () => resetTimeouts();
-  }, [generateArray, arraySize]);
+  }, [arraySize]);
 
   // Stop sorting
   const stopSorting = () => {
