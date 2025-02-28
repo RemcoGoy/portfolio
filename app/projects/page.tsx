@@ -27,7 +27,7 @@ export default function ProjectsPage() {
               <a
                 key={index}
                 href={project.url}
-                target="_blank"
+                target={project.type === "github" ? "_blank" : undefined}
                 rel="noopener noreferrer"
                 className="block"
               >
