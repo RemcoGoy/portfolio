@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-
 interface ControlsProps {
   arraySize: number;
   setArraySize: (size: number) => void;
