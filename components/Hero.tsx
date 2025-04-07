@@ -2,32 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin } from "lucide-react";
-import { useEffect, useState, useRef } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import Image from "next/image";
 import Me from "@/public/me.png";
-import { TITLES, TITLE_DURATION } from "@/lib/titles";
+import { TITLES } from "@/lib/titles";
 import Link from "next/link";
+import TextRotate from "@/fancy/components/text/text-rotate";
 
 export default function Hero() {
-  const [currentTitle, setCurrentTitle] = useState(TITLES[0]);
-  const [titleIndex, setTitleIndex] = useState(0);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
-
-  useEffect(() => {
-    intervalRef.current = setInterval(() => {
-      const nextIndex = (titleIndex + 1) % TITLES.length;
-      setTitleIndex(nextIndex);
-      setCurrentTitle(TITLES[nextIndex]);
-    }, TITLE_DURATION);
-
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, [titleIndex]);
-
   return (
     <div className="relative overflow-hidden">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 pb-6 lg:px-14 lg:py-24 sm:py-32 relative z-10">
@@ -45,21 +27,26 @@ export default function Hero() {
             </h1>
             <div className="my-8 text-3xl text-gray-600 dark:text-gray-400">
               <div className="flex flex-col sm:flex-row sm:items-center">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentTitle}
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -20, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="inline-block drop-shadow-xl mb-2 sm:mb-0"
-                  >
-                    <span className="border border-gray-900 bg-gray-900 text-white px-2 py-1 rounded-md dark:border-gray-100 dark:bg-gray-100 dark:text-black">
-                      {currentTitle}
-                    </span>
-                  </motion.div>
-                </AnimatePresence>
-                <span className="sm:ml-2">Engineer</span>
+                <motion.p className="flex whitespace-pre" layout>
+                  <motion.span
+                    className="pt-0.5 sm:pt-1 md:pt-2"
+                    layout
+                    transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                  ></motion.span>
+                  <TextRotate
+                    texts={TITLES}
+                    mainClassName="text-white px-2 sm:px-2 md:px-3 bg-gray-900 overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg dark:bg-gray-100 dark:text-gray-900"
+                    staggerFrom={"last"}
+                    initial={{ y: "100%" }}
+                    animate={{ y: 0 }}
+                    exit={{ y: "-120%" }}
+                    staggerDuration={0.025}
+                    splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                    transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                    rotationInterval={5000}
+                  />
+                  <span className="sm:ml-2 flex items-center">Engineer</span>
+                </motion.p>
               </div>
             </div>
             <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
